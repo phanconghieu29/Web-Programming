@@ -1,0 +1,22 @@
+﻿@model List<Question2.Models.tbl_TheLoai>
+@{
+    ViewBag.Title = "Danh Sách Thể Loại";
+}
+
+<h2 class="text-center">DANH SÁCH THỂ LOẠI</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Mã Thể Loại</th>
+        <th>Tên Thể Loại</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaTheLoai</td>
+            <td>@item.TenTheLoai</td>
+        </tr>
+    }
+</table>
+
+<a class="btn btn-primary" href="/home/addnewgenre">Thêm thể loại mới</a>

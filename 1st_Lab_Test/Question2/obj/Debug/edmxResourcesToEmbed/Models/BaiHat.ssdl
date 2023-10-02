@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QL_BaiHatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_Album">
+    <Key>
+      <PropertyRef Name="MaAlbum" />
+    </Key>
+    <Property Name="MaAlbum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenAlbum" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayTao" Type="date" />
+    <Property Name="AnhBia" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_BaiHat">
+    <Key>
+      <PropertyRef Name="MaBH" />
+    </Key>
+    <Property Name="MaBH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenBH" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaTL" Type="int" Nullable="false" />
+    <Property Name="MaNS" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ChiTietAlbum">
+    <Key>
+      <PropertyRef Name="MaAB" />
+      <PropertyRef Name="MaBH" />
+    </Key>
+    <Property Name="MaAB" Type="int" Nullable="false" />
+    <Property Name="MaBH" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_NhacSi">
+    <Key>
+      <PropertyRef Name="MaNhacSi" />
+    </Key>
+    <Property Name="MaNhacSi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenNhacSi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Anh" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_TheLoai">
+    <Key>
+      <PropertyRef Name="MaTheLoai" />
+    </Key>
+    <Property Name="MaTheLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTheLoai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_tbl_BaiHat_tbl_NhacSi">
+    <End Role="tbl_NhacSi" Type="Self.tbl_NhacSi" Multiplicity="1" />
+    <End Role="tbl_BaiHat" Type="Self.tbl_BaiHat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_NhacSi">
+        <PropertyRef Name="MaNhacSi" />
+      </Principal>
+      <Dependent Role="tbl_BaiHat">
+        <PropertyRef Name="MaNS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BaiHat_tbl_TheLoai">
+    <End Role="tbl_TheLoai" Type="Self.tbl_TheLoai" Multiplicity="1" />
+    <End Role="tbl_BaiHat" Type="Self.tbl_BaiHat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_TheLoai">
+        <PropertyRef Name="MaTheLoai" />
+      </Principal>
+      <Dependent Role="tbl_BaiHat">
+        <PropertyRef Name="MaTL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ChiTietAlbum_tbl_Album">
+    <End Role="tbl_Album" Type="Self.tbl_Album" Multiplicity="1" />
+    <End Role="tbl_ChiTietAlbum" Type="Self.tbl_ChiTietAlbum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Album">
+        <PropertyRef Name="MaAlbum" />
+      </Principal>
+      <Dependent Role="tbl_ChiTietAlbum">
+        <PropertyRef Name="MaAB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ChiTietAlbum_tbl_BaiHat">
+    <End Role="tbl_BaiHat" Type="Self.tbl_BaiHat" Multiplicity="1" />
+    <End Role="tbl_ChiTietAlbum" Type="Self.tbl_ChiTietAlbum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_BaiHat">
+        <PropertyRef Name="MaBH" />
+      </Principal>
+      <Dependent Role="tbl_ChiTietAlbum">
+        <PropertyRef Name="MaBH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QL_BaiHatModelStoreContainer">
+    <EntitySet Name="tbl_Album" EntityType="Self.tbl_Album" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_BaiHat" EntityType="Self.tbl_BaiHat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ChiTietAlbum" EntityType="Self.tbl_ChiTietAlbum" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_NhacSi" EntityType="Self.tbl_NhacSi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_TheLoai" EntityType="Self.tbl_TheLoai" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbl_BaiHat_tbl_NhacSi" Association="Self.FK_tbl_BaiHat_tbl_NhacSi">
+      <End Role="tbl_NhacSi" EntitySet="tbl_NhacSi" />
+      <End Role="tbl_BaiHat" EntitySet="tbl_BaiHat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BaiHat_tbl_TheLoai" Association="Self.FK_tbl_BaiHat_tbl_TheLoai">
+      <End Role="tbl_TheLoai" EntitySet="tbl_TheLoai" />
+      <End Role="tbl_BaiHat" EntitySet="tbl_BaiHat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ChiTietAlbum_tbl_Album" Association="Self.FK_tbl_ChiTietAlbum_tbl_Album">
+      <End Role="tbl_Album" EntitySet="tbl_Album" />
+      <End Role="tbl_ChiTietAlbum" EntitySet="tbl_ChiTietAlbum" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ChiTietAlbum_tbl_BaiHat" Association="Self.FK_tbl_ChiTietAlbum_tbl_BaiHat">
+      <End Role="tbl_BaiHat" EntitySet="tbl_BaiHat" />
+      <End Role="tbl_ChiTietAlbum" EntitySet="tbl_ChiTietAlbum" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

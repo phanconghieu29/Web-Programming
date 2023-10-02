@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QL_BaiHatModelStoreContainer" CdmEntityContainer="QL_BaiHatEntities1">
+    <EntitySetMapping Name="tbl_Album">
+      <EntityTypeMapping TypeName="QL_BaiHatModel.tbl_Album">
+        <MappingFragment StoreEntitySet="tbl_Album">
+          <ScalarProperty Name="MaAlbum" ColumnName="MaAlbum" />
+          <ScalarProperty Name="TenAlbum" ColumnName="TenAlbum" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="AnhBia" ColumnName="AnhBia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_BaiHat">
+      <EntityTypeMapping TypeName="QL_BaiHatModel.tbl_BaiHat">
+        <MappingFragment StoreEntitySet="tbl_BaiHat">
+          <ScalarProperty Name="MaBH" ColumnName="MaBH" />
+          <ScalarProperty Name="TenBH" ColumnName="TenBH" />
+          <ScalarProperty Name="MaTL" ColumnName="MaTL" />
+          <ScalarProperty Name="MaNS" ColumnName="MaNS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_NhacSi">
+      <EntityTypeMapping TypeName="QL_BaiHatModel.tbl_NhacSi">
+        <MappingFragment StoreEntitySet="tbl_NhacSi">
+          <ScalarProperty Name="MaNhacSi" ColumnName="MaNhacSi" />
+          <ScalarProperty Name="TenNhacSi" ColumnName="TenNhacSi" />
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_TheLoai">
+      <EntityTypeMapping TypeName="QL_BaiHatModel.tbl_TheLoai">
+        <MappingFragment StoreEntitySet="tbl_TheLoai">
+          <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+          <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tbl_ChiTietAlbum" TypeName="QL_BaiHatModel.tbl_ChiTietAlbum" StoreEntitySet="tbl_ChiTietAlbum">
+      <EndProperty Name="tbl_Album">
+        <ScalarProperty Name="MaAlbum" ColumnName="MaAB" />
+      </EndProperty>
+      <EndProperty Name="tbl_BaiHat">
+        <ScalarProperty Name="MaBH" ColumnName="MaBH" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

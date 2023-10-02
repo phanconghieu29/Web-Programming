@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "AddNewGenre";
+}
+
+<form method="post">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2>THÊM THỂ LOẠI</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <label for="MaTheLoai">Mã Thể Loại</label>
+        </div>
+        <div class="col-10">
+            <input type="text" class="form-control" id="MaTheLoai" name="MaTheLoai" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <label for="TenTheLoai">Tên Thể Loại</label>
+        </div>
+        <div class="col-10">
+            <input type="text" class="form-control" id="TenTheLoai" name="TenTheLoai" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-7 text-center">
+            <button type="submit" class="btn btn-primary">Thêm</button>
+            <button type="reset" class="btn btn-danger">Hủy Bỏ</button>
+        </div>
+    </div>
+</form>

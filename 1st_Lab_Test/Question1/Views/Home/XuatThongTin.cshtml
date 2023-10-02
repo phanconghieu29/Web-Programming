@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Question1.Models.RegistrationInformation
+@{
+    ViewBag.Title = "Thông tin";
+}
+
+<div class="container">
+    <h5>THÔNG TIN VỀ ĐƠN VỊ TUYẾN</h5>
+    <p>Tên đơn vị tuyến: @Model.tenDonViTuyen</p>
+    <p>Loại hình doanh nghiệp: @Model.loaiHinhDoanhNghiep</p>
+    <p>Số lượng nhân viên: @Model.soLuongNhanVien</p>
+    <h5>THÔNG TIN LIÊN HỆ</h5>
+    <p>Địa chỉ: @Model.diaChi</p>
+    <p>Người liên hệ: @Model.nguoiLienHe</p>
+    <p>Số điện thoại: @Model.sdt</p>
+    <p>Số fax: @Model.fax</p>
+    <p>Email: @Model.email</p>
+    <p>Địa chỉ website: @Model.diaChiWebsite</p>
+    <h5>THÔNG TIN ĐĂNG NHẬP</h5>
+    <p>Tên đăng nhập: @Model.tenDangNhap</p>
+    <h5>NHẬN EMAIL</h5>
+    @if(Model.nhanThuDienTu == true)
+    {
+        <p>Có nhận thư điện tử</p>
+    }
+    else
+    {
+        <p>Không nhận thư điện tử</p>
+    }
+</div>

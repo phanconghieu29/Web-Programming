@@ -1,0 +1,24 @@
+﻿@model List<Question2.Models.tbl_BaiHat>
+@{
+    ViewBag.Title = "Danh Sách Bài Hát";
+}
+
+<h2 class="text-center">DANH SÁCH BÀI HÁT</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Mã Bài Hát</th>
+        <th>Tên Bài Hát</th>
+        <th>Mã Thể Loại</th>
+        <th>Mã Nhạc Sĩ</th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.MaBH</td>
+                    <td>@item.TenBH</td>
+                    <td>@item.MaTL</td>
+                    <td>@item.MaNS</td>
+                </tr>
+            }
+</table>

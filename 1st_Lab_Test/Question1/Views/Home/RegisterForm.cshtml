@@ -1,0 +1,152 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Question1.Models.RegistrationInformation
+@{
+    ViewBag.Title = "Đăng ký thông tin";
+}
+
+<div class="container">
+    <form method="post">
+        <table class="table table-bordered">
+            <tbody>
+                <tr class="bg-primary text-center">
+                    <td colspan="2">
+                        <p class="text-white">THÔNG TIN VỀ ĐƠN VỊ TUYẾN</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">
+                        <p>Tên đơn vị tuyến (*)</p>
+                    </td>
+                    <td class="col-md-9">
+                        <input type="text" class="form-control" id="tenDonViTuyen" name="tenDonViTuyen"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">
+                        <p>Loại hình doanh nghiệp (*)</p>
+                    </td>
+                    <td class="col-md-9">
+                        <select class="form-control" name="loaiHinhDoanhNghiep" id="loaiHinhDoanhNghiep">
+                            <option value="Đơn vị sự nghiệp nhà nước">Đơn vị sự nghiệp nhà nước</option>
+                            <option value="ABC">ABC</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">
+                        <p>Số lượng nhân viên</p>
+                    </td>
+                    <td class="col-md-9">
+                        <input type="text" class="form-control" id="soLuongNhanVien" name="soLuongNhanVien" />
+                    </td>
+                </tr>
+                <tr class="bg-primary text-center">
+                    <td colspan="2">
+                        <p class="text-white">THÔNG TIN LIÊN HỆ</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">
+                        <p>Địa chỉ (*)</p>
+                    </td>
+                    <td class="col-md-9">
+                        <textarea class="form-control" id="diaChi" name="diaChi" rows="4"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">
+                        <p>Người liên hệ (*)</p>
+                    </td>
+                    <td class="col-md-9">
+                        <input type="text" class="form-control" id="nguoiLienHe" name="nguoiLienHe" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">
+                        <p>Số điện thoại (*)</p>
+                    </td>
+                    <td class="col-md-9">
+                        <input type="tel" class="form-control" id="sdt" name="sdt" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">
+                        <p>Số Fax</p>
+                    </td>
+                    <td class="col-md-9">
+                        <input type="text" class="form-control" id="fax" name="fax" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">
+                        <p>Email</p>
+                    </td>
+                    <td class="col-md-9">
+                        <input type="email" class="form-control" id="email" name="email" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">
+                        <p>Địa chỉ website</p>
+                    </td>
+                    <td class="col-md-9">
+                        <input type="text" class="form-control" id="diaChiWebsite" name="diaChiWebsite" />
+                    </td>
+                </tr>
+                <tr class="bg-primary text-center">
+                    <td colspan="2">
+                        <p class="text-white">THÔNG TIN ĐĂNG NHẬP</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">
+                        <p>Tên đăng nhập (*)</p>
+                    </td>
+                    <td class="col-md-9">
+                        <input type="text" class="form-control" id="tenDangNhap" name="tenDangNhap" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">
+                        <p>Mật khẩu (*)</p>
+                    </td>
+                    <td class="col-md-9">
+                        <input type="password" class="form-control" id="password" name="password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">
+                        <p>Xác nhận mật khẩu (*)</p>
+                    </td>
+                    <td class="col-md-9">
+                        <input type="password" class="form-control" id="retypePassword" name="retypePassword" />
+                    </td>
+                </tr>
+                <tr class="bg-primary text-center">
+                    <td colspan="2">
+                        <p class="text-white">NHẬN E-MAIL</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">
+                        <p>Nhận thư điện tử</p>
+                    </td>
+                    <td class="col-md-9">
+                        <span>
+                            <input type="radio" id="nhanThuDienTuTrue" name="nhanThuDienTu" value="true"/>Nhận
+                            <input type="radio" id="nhanThuDienTuFalse" name="nhanThuDienTu" value="false"/>Không nhận
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <button type="submit" class="btn btn-primary">Cập Nhật</button>
+                        <button type="reset" class="btn btn-primary">Hủy bỏ</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
